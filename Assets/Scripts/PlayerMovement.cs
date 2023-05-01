@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    CharacterController cc;
     public float speed = 0.05f;
     float xDirection;
     float yDirection;
     public float leftBound = -10;
     public float rightBound = 10;
     public float lowerBound = -2;
+
+    bool IsUnderwater()
+    {
+        return gameObject.transform.position.y < 1.5;
+    }
+
 
     // Update is called once per frame
     void Update()
